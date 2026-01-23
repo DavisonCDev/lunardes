@@ -1,0 +1,325 @@
+:root {
+    --bg-color: #0a0a0a;
+    --text-color: #ffffff;
+    --accent-color: #7000ff; /* Roxo Neon */
+    --accent-glow: #7000ff88;
+    --font-display: 'Syne', sans-serif;
+    --font-body: 'Inter', sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-body);
+    overflow-x: hidden;
+}
+
+/* 1. Efeito de Ruído (Noise) - Dá textura de filme */
+.noise-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    pointer-events: none;
+    z-index: 999;
+    opacity: 0.05;
+    background: url('https://grainy-gradients.vercel.app/noise.svg');
+}
+
+/* Navegação Glassmorphism */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+    background: rgba(10, 10, 10, 0.3);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.logo {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 40px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover { color: var(--accent-color); text-shadow: 0 0 10px var(--accent-color); }
+
+/* Hero Section - Impacto Visual */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    mix-blend-mode: exclusion; /* Faz o texto interagir com a foto */
+}
+
+.hero h1 {
+    font-family: var(--font-display);
+    font-size: 12vw; /* Texto gigante responsivo */
+    line-height: 0.8;
+    text-transform: uppercase;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.8rem;
+    font-weight: bold;
+    letter-spacing: 5px;
+    margin-bottom: 40px;
+    color: #ffffff;
+}
+
+.hero-img-container {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    z-index: 1;
+}
+
+.hero-img-container img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%) contrast(120%); /* Estilo Rock P&B */
+    transition: 1s ease;
+}
+
+.hero:hover .hero-img-container img {
+    filter: grayscale(0%) contrast(100%); /* Cor ao passar o mouse */
+    transform: scale(1.02);
+}
+
+/* Letreiro Animado (Marquee) */
+.marquee-container {
+    background: var(--accent-color);
+    color: #fff;
+    padding: 15px 0;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    z-index: 5;
+    transform: rotate(-2deg) scale(1.1); /* Deixa tortinho estiloso */
+    border-top: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+}
+
+.marquee-content {
+    display: inline-block;
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 1.5rem;
+    animation: marquee 20s linear infinite;
+}
+
+@keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* Seção Música */
+.section-dark {
+    padding: 100px 5vw;
+    background: #000;
+}
+
+.outline-title {
+    font-family: var(--font-display);
+    font-size: 4rem;
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(255,255,255,0.5); /* Apenas contorno */
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.album-showcase {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+.cover-art {
+    position: relative;
+    width: 300px;
+    height: 300px;
+}
+
+.cover-art img {
+    width: 100%;
+    border-radius: 10px;
+    z-index: 2;
+    position: relative;
+}
+
+/* Brilho atrás do álbum */
+.cover-art .glow {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%; height: 100%;
+    background: var(--accent-color);
+    filter: blur(60px);
+    opacity: 0.6;
+    animation: pulse 3s infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 0.4; }
+    50% { opacity: 0.8; }
+    100% { opacity: 0.4; }
+}
+
+.track-info h3 {
+    font-family: var(--font-display);
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.buttons {
+    margin-top: 30px;
+    display: flex;
+    gap: 20px;
+}
+
+.btn-spotify {
+    background: #1DB954;
+    color: #000;
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.btn-outline {
+    border: 1px solid #fff;
+    color: #fff;
+    padding: 15px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+.btn-outline:hover { background: #fff; color: #000; }
+
+/* Lista de Shows Moderna */
+.tour-section {
+    padding: 100px 5vw;
+}
+
+.tour-list {
+    list-style: none;
+    border-top: 1px solid #333;
+}
+
+.tour-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 0;
+    border-bottom: 1px solid #333;
+    transition: 0.3s;
+}
+
+.tour-item:hover {
+    background: #111;
+    padding-left: 20px; /* Movimento ao passar o mouse */
+    border-bottom: 1px solid var(--accent-color);
+}
+
+.tour-item .date {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 1.5rem;
+    color: var(--accent-color);
+}
+
+.tour-item .city {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.btn-ticket {
+    border: 1px solid #333;
+    padding: 10px 20px;
+    color: #888;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    transition: 0.3s;
+}
+
+.tour-item:hover .btn-ticket {
+    background: #fff;
+    color: #000;
+}
+
+/* Rodapé Big Type */
+.footer-section {
+    padding: 100px 5vw 50px;
+    background: #050505;
+    text-align: center;
+}
+
+.social-big {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 50px;
+}
+
+.social-big a {
+    font-family: var(--font-display);
+    font-size: 4vw;
+    color: #333;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 800;
+    transition: 0.3s;
+    line-height: 1;
+}
+
+.social-big a:hover {
+    color: #fff;
+    letter-spacing: 5px; /* Efeito elástico */
+}
+
+/* Mobile Fixes */
+@media (max-width: 768px) {
+    .hero h1 { font-size: 18vw; }
+    .nav-links { display: none; } /* Adicionar JS para menu mobile depois */
+    .menu-toggle { display: block; font-size: 1.5rem; cursor: pointer; }
+    .album-showcase { flex-direction: column; text-align: center; }
+    .tour-item { flex-direction: column; align-items: flex-start; gap: 10px; }
+    .btn-ticket { width: 100%; text-align: center; }
+    .social-big a { font-size: 15vw; }
+}
