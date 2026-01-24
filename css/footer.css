@@ -6,8 +6,10 @@
     background: #050505;
     text-align: center;
     
+
     width: 100%;
     overflow: hidden; 
+    box-sizing: border-box;
 }
 
 .social-big {
@@ -15,6 +17,7 @@
     flex-direction: column;
     gap: 10px;
     margin-bottom: 50px;
+    width: 100%;
 }
 
 .social-big a {
@@ -27,16 +30,15 @@
     font-weight: 800;
     transition: 0.4s;
     line-height: 1;
-    
 
-    white-space: nowrap; 
+    letter-spacing: 0;
 }
 
 
 @media (hover: hover) {
     .social-big a:hover {
         color: #fff;
-        letter-spacing: 5px; /* Expande as letras */
+        letter-spacing: 5px; 
         text-shadow: 0 0 20px var(--accent-color);
     }
 }
@@ -49,26 +51,34 @@
 }
 
 /* =========================================
-   RESPONSIVIDADE (MOBILE)
+   RESPONSIVIDADE (MOBILE) - COM EXPANSÃO
    ========================================= */
 @media (max-width: 768px) {
     
     .footer-section {
-        padding: 60px 10px 40px; 
+        padding: 60px 5px 40px; 
     }
 
     .social-big {
-        gap: 15px;
+        gap: 20px;
     }
 
     .social-big a { 
-       
-        font-size: 11vw; 
+
+        font-size: 7vw; 
+        
+
+        letter-spacing: 0;
+        
+
+        white-space: nowrap;
     }
 
-    .social-big a:hover,
-    .social-big a:active {
-        letter-spacing: 0; 
+
+    .social-big a:active,
+    .social-big a:focus {
+
+        letter-spacing: 3px; 
         color: #fff;
         text-shadow: 0 0 10px var(--accent-color);
     }
