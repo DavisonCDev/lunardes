@@ -57,25 +57,30 @@
 
 /* --- VERSÃO MOBILE --- */
 @media (max-width: 768px) {
+
     .hero h1 { font-size: 18vw; }
     
     .hero-img-container {
+      
+        top: 100px; 
         
-        top: 80px; 
-        
-       
-        height: calc(100% - 80px); 
+        /* 2. A altura será o que sobrar da tela */
+        height: calc(100dvh - 100px); 
     }
-    
+
     .hero-img-container img {
         animation: none; 
-       
+
         transform: none; 
         
+       
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
         
+       
         object-position: top center; 
-        
-      
-        height: 100%; 
+
     }
+
 }
