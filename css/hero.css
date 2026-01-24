@@ -66,44 +66,46 @@
 
     .hero h1 { font-size: 18vw; }
     
-  
+    
     .hero {
-        height: auto;         
-        min-height: auto;
-        display: block;       
+        height: auto !important;      
+        min-height: 0 !important;     
+        display: block;               
         position: relative;
-        padding-top: 90px;    
+        padding-top: 90px;            
         background-color: #0e0e0e;
+        padding-bottom: 0;            
     }
 
-
     .hero-img-container {
-        position: relative;   
+        position: relative !important; 
         top: 0;
         left: 0;
         width: 100%;
-        height: auto;         
+        height: auto !important;       
     }
 
-
+    
     .hero-img-container img {
         animation: none !important;
         transform: none !important;
         
         width: 100%;
-        height: auto;         
-        display: block;       
+        height: auto !important;      
+        display: block;               
         object-fit: contain;
     }
 
-    
+  
     .hero-content {
         position: absolute;
-        top: 40%; 
+        top: 50%; 
         left: 0;
         width: 100%;
         transform: translateY(-50%);
         z-index: 10;
+        
+        
         margin-top: 45px; 
     }
 }
