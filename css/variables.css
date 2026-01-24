@@ -1,15 +1,10 @@
 :root {
     --bg-color: #0a0a0a;
     --text-color: #ffffff;
-    --accent-color: #7000ff;
+    --accent-color: #7000ff; /* Roxo Neon */
     --accent-glow: #7000ff88;
     --font-display: 'Syne', sans-serif;
     --font-body: 'Inter', sans-serif;
-}
-
-html, body {
-    max-width: 100vw;
-    overflow-x: hidden;
 }
 
 * { 
@@ -20,13 +15,19 @@ html, body {
 
 html {
     scroll-behavior: smooth;
+    /* Impede que o site fique mais largo que a tela */
+    max-width: 100vw;
+    overflow-x: hidden;
 }
 
 body {
     background-color: var(--bg-color);
     color: var(--text-color);
     font-family: var(--font-body);
+    /* TRAVA DE SEGURANÇA: Remove barra de rolagem horizontal */
     overflow-x: hidden;
+    position: relative;
+    width: 100%;
 }
 
 /* EFEITO DE RUÍDO */

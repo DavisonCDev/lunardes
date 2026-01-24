@@ -5,14 +5,20 @@
     background: var(--accent-color);
     color: #fff;
     padding: 15px 0;
-    overflow: hidden;
     white-space: nowrap;
     position: relative;
     z-index: 5;
+    
     transform: rotate(-2deg) scale(1.1);
+    
     border-top: 2px solid #fff;
     border-bottom: 2px solid #fff;
     margin-top: -50px;
+
+    /* TRAVA CRUCIAL: Impede vazamento lateral */
+    width: 100%;
+    max-width: 100%; 
+    overflow: hidden; 
 }
 
 .marquee-content {
@@ -29,7 +35,7 @@
 }
 
 /* =========================================
-   SEÇÃO MÚSICA
+   SEÇÃO MÚSICA & ÁLBUM
    ========================================= */
 .section-dark {
     padding: 100px 5vw;
@@ -90,7 +96,7 @@
 }
 
 /* =========================================
-   BOTÕES DE PLATAFORMAS (TODOS PERSONALIZADOS)
+   BOTÕES DE PLATAFORMAS
    ========================================= */
 .buttons { 
     margin-top: 30px; 
@@ -113,62 +119,36 @@
     justify-content: center;
     gap: 10px; 
     border: none;
-    color: #fff; /* Texto branco padrão */
+    color: #fff;
 }
 
-/* Efeito Hover Geral */
 .btn-plataforma:hover { 
     transform: translateY(-3px); 
     filter: brightness(1.1);
 }
 
 /* --- Cores das Marcas --- */
-
-/* Spotify */
-.btn-spotify {
-    background: #1DB954; 
-    color: #000; /* Preto para contraste no verde neon */
-}
-
-/* Apple Music */
-.btn-apple {
-    background: #FA243C; 
-}
-
-/* Deezer */
-.btn-deezer {
-    background: #A238FF; 
-}
-
-/* Amazon Music */
-.btn-amazon {
-    background: #00A8E1;
-}
-
-/* YouTube Music (App de streaming) */
-.btn-ytmusic {
-    background: #212121; /* Cinza escuro/Preto oficial do YT Music app */
-    border: 1px solid #FF0000; /* Detalhe vermelho */
-}
-
-/* YouTube (Vídeo / Clipe) */
-.btn-youtube {
-    background: #FF0000; /* Vermelho clássico do YouTube */
-}
+.btn-spotify { background: #1DB954; color: #000; }
+.btn-apple { background: #FA243C; }
+.btn-deezer { background: #A238FF; }
+.btn-amazon { background: #00A8E1; }
+.btn-ytmusic { background: #212121; border: 1px solid #FF0000; }
+.btn-youtube { background: #FF0000; }
 
 /* =========================================
-   RESPONSIVIDADE (MOBILE)
+   RESPONSIVIDADE DOS COMPONENTES
    ========================================= */
 @media (max-width: 768px) {
+    .marquee-container { 
+        margin-top: -30px; 
+        transform: rotate(-2deg) scale(1.02); /* Escala menor para evitar bugs */
+    }
+
     .album-showcase { 
         flex-direction: column; 
         text-align: center; 
     }
     
-    .marquee-container { 
-        margin-top: -30px; 
-    }
-
     .buttons {
         justify-content: center; 
     }
