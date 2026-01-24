@@ -1,4 +1,6 @@
-/* MARQUEE */
+/* =========================================
+   MARQUEE (Texto correndo)
+   ========================================= */
 .marquee-container {
     background: var(--accent-color);
     color: #fff;
@@ -26,7 +28,9 @@
     100% { transform: translateX(-50%); }
 }
 
-/* SEÇÃO MÚSICA */
+/* =========================================
+   SEÇÃO MÚSICA
+   ========================================= */
 .section-dark {
     padding: 100px 5vw;
     background: #000;
@@ -85,21 +89,92 @@
     margin-bottom: 10px;
 }
 
-/* BOTÕES GLOBAIS */
-.buttons { margin-top: 30px; display: flex; gap: 20px; flex-wrap: wrap; }
+/* =========================================
+   BOTÕES DE PLATAFORMAS (TODOS PERSONALIZADOS)
+   ========================================= */
+.buttons { 
+    margin-top: 30px; 
+    display: flex; 
+    gap: 15px; 
+    flex-wrap: wrap; 
+}
+
+/* Estilo Base para TODOS os botões */
+.btn-plataforma {
+    padding: 12px 25px; 
+    border-radius: 50px;
+    font-weight: 700; 
+    text-decoration: none; 
+    text-transform: uppercase; 
+    transition: transform 0.2s, filter 0.2s;
+    font-size: 0.9rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px; 
+    border: none;
+    color: #fff; /* Texto branco padrão */
+}
+
+/* Efeito Hover Geral */
+.btn-plataforma:hover { 
+    transform: translateY(-3px); 
+    filter: brightness(1.1);
+}
+
+/* --- Cores das Marcas --- */
+
+/* Spotify */
 .btn-spotify {
-    background: #1DB954; color: #000; padding: 15px 30px; border-radius: 50px;
-    font-weight: 700; text-decoration: none; text-transform: uppercase; transition: 0.3s;
+    background: #1DB954; 
+    color: #000; /* Preto para contraste no verde neon */
 }
-.btn-spotify:hover { transform: scale(1.05); background: #1ed760; }
 
-.btn-outline {
-    border: 1px solid #fff; color: #fff; padding: 15px 30px; border-radius: 50px;
-    text-decoration: none; text-transform: uppercase; transition: 0.3s;
+/* Apple Music */
+.btn-apple {
+    background: #FA243C; 
 }
-.btn-outline:hover { background: #fff; color: #000; }
 
+/* Deezer */
+.btn-deezer {
+    background: #A238FF; 
+}
+
+/* Amazon Music */
+.btn-amazon {
+    background: #00A8E1;
+}
+
+/* YouTube Music (App de streaming) */
+.btn-ytmusic {
+    background: #212121; /* Cinza escuro/Preto oficial do YT Music app */
+    border: 1px solid #FF0000; /* Detalhe vermelho */
+}
+
+/* YouTube (Vídeo / Clipe) */
+.btn-youtube {
+    background: #FF0000; /* Vermelho clássico do YouTube */
+}
+
+/* =========================================
+   RESPONSIVIDADE (MOBILE)
+   ========================================= */
 @media (max-width: 768px) {
-    .album-showcase { flex-direction: column; text-align: center; }
-    .marquee-container { margin-top: -30px; }
+    .album-showcase { 
+        flex-direction: column; 
+        text-align: center; 
+    }
+    
+    .marquee-container { 
+        margin-top: -30px; 
+    }
+
+    .buttons {
+        justify-content: center; 
+    }
+    
+    .btn-plataforma {
+        width: 100%; 
+        max-width: 320px; 
+    }
 }
