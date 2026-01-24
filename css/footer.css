@@ -1,7 +1,13 @@
+/* =========================================
+   FOOTER / CONTATO
+   ========================================= */
 .footer-section {
     padding: 100px 5vw 50px;
     background: #050505;
     text-align: center;
+    
+    width: 100%;
+    overflow: hidden; 
 }
 
 .social-big {
@@ -13,6 +19,7 @@
 
 .social-big a {
     font-family: var(--font-display);
+
     font-size: clamp(2rem, 10vw, 5rem);
     color: #222;
     text-decoration: none;
@@ -20,17 +27,49 @@
     font-weight: 800;
     transition: 0.4s;
     line-height: 1;
+    
+
+    white-space: nowrap; 
 }
 
-.social-big a:hover {
-    color: #fff;
-    letter-spacing: 5px;
-    text-shadow: 0 0 20px var(--accent-color);
+
+@media (hover: hover) {
+    .social-big a:hover {
+        color: #fff;
+        letter-spacing: 5px; /* Expande as letras */
+        text-shadow: 0 0 20px var(--accent-color);
+    }
 }
 
-/* Responsividade do Footer */
+.footer-section footer p {
+    font-size: 0.8rem;
+    color: #555;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* =========================================
+   RESPONSIVIDADE (MOBILE)
+   ========================================= */
 @media (max-width: 768px) {
+    
+    .footer-section {
+        padding: 60px 10px 40px; 
+    }
+
+    .social-big {
+        gap: 15px;
+    }
+
     .social-big a { 
-        font-size: 12vw; 
+       
+        font-size: 11vw; 
+    }
+
+    .social-big a:hover,
+    .social-big a:active {
+        letter-spacing: 0; 
+        color: #fff;
+        text-shadow: 0 0 10px var(--accent-color);
     }
 }
