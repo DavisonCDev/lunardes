@@ -1,0 +1,105 @@
+/* MARQUEE */
+.marquee-container {
+    background: var(--accent-color);
+    color: #fff;
+    padding: 15px 0;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    z-index: 5;
+    transform: rotate(-2deg) scale(1.1);
+    border-top: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    margin-top: -50px;
+}
+
+.marquee-content {
+    display: inline-block;
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 1.2rem;
+    animation: marquee 20s linear infinite;
+}
+
+@keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* SEÇÃO MÚSICA */
+.section-dark {
+    padding: 100px 5vw;
+    background: #000;
+}
+
+.outline-title {
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem, 8vw, 4rem);
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(255,255,255,0.5);
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.album-showcase {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+.cover-art {
+    position: relative;
+    width: 300px;
+    height: 300px;
+}
+
+.cover-art img {
+    width: 100%;
+    border-radius: 10px;
+    z-index: 2;
+    position: relative;
+}
+
+.cover-art .glow {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%; height: 100%;
+    background: var(--accent-color);
+    filter: blur(60px);
+    opacity: 0.6;
+    animation: pulse 3s infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 0.4; }
+    50% { opacity: 0.8; }
+    100% { opacity: 0.4; }
+}
+
+.track-info h3 {
+    font-family: var(--font-display);
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+/* BOTÕES GLOBAIS */
+.buttons { margin-top: 30px; display: flex; gap: 20px; flex-wrap: wrap; }
+.btn-spotify {
+    background: #1DB954; color: #000; padding: 15px 30px; border-radius: 50px;
+    font-weight: 700; text-decoration: none; text-transform: uppercase; transition: 0.3s;
+}
+.btn-spotify:hover { transform: scale(1.05); background: #1ed760; }
+
+.btn-outline {
+    border: 1px solid #fff; color: #fff; padding: 15px 30px; border-radius: 50px;
+    text-decoration: none; text-transform: uppercase; transition: 0.3s;
+}
+.btn-outline:hover { background: #fff; color: #000; }
+
+@media (max-width: 768px) {
+    .album-showcase { flex-direction: column; text-align: center; }
+    .marquee-container { margin-top: -30px; }
+}

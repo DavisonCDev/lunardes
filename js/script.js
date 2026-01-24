@@ -2,50 +2,48 @@ document.addEventListener('DOMContentLoaded', () => {
     const menuToggle = document.querySelector('.menu-toggle');
     const navLinks = document.querySelector('.nav-links');
     const body = document.body;
+    const icon = menuToggle.querySelector('i');
 
-    // Abrir/Fechar menu
-    menuToggle.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
+    // --- LÓGICA DO MENU MOBILE ---
+    const toggleMenu = (isOpen) => {
+        navLinks.classList.toggle('active', isOpen);
+        menuToggle.classList.toggle('active', isOpen); // Adiciona classe para girar o ícone se quiser
         
-        // Opcional: troca o ícone de barras por um X
-        const icon = menuToggle.querySelector('i');
-        icon.classList.toggle('fa-bars');
-        icon.classList.toggle('fa-times');
-
-        // Trava o scroll do site quando o menu está aberto
-        if (navLinks.classList.contains('active')) {
-            body.style.overflow = 'hidden';
-        } else {
-            body.style.overflow = 'initial';
+        // Troca o ícone (Bars / Times)
+        if (icon) {
+            icon.classList.toggle('fa-bars', !isOpen);
+            icon.classList.toggle('fa-times', isOpen);
         }
+
+        // Trava/Destrava o scroll
+        body.style.overflow = isOpen ? 'hidden' : 'initial';
+    };
+
+    menuToggle.addEventListener('click', () => {
+        const isOpening = !navLinks.classList.contains('active');
+        toggleMenu(isOpening);
     });
 
-    // Fechar menu ao clicar em um link (navegação interna)
-    const links = document.querySelectorAll('.nav-links a');
-    links.forEach(link => {
-        link.addEventListener('click', () => {
-            navLinks.classList.remove('active');
-            body.style.overflow = 'initial';
-            
-            // Volta o ícone para barras
-            const icon = menuToggle.querySelector('i');
-            icon.classList.add('fa-bars');
-            icon.classList.remove('fa-times');
+    // Fechar ao clicar nos links
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => toggleMenu(false));
+    });
+
+    // --- LÓGICA DE REVEAL (Scroll) ---
+    const reveal = () => {
+        const reveals = document.querySelectorAll('section, .album-showcase, .tour-item');
+        
+        reveals.forEach(el => {
+            const windowHeight = window.innerHeight;
+            const revealTop = el.getBoundingClientRect().top;
+            const revealPoint = 150;
+
+            if (revealTop < windowHeight - revealPoint) {
+                el.classList.add('visible');
+            }
         });
-    });
+    };
+
+    window.addEventListener('scroll', reveal);
+    reveal(); // Executa uma vez ao carregar para mostrar o que já está na tela
 });
-
-// Efeito de Reveal nas seções ao rolar
-function reveal() {
-    const reveals = document.querySelectorAll('section');
-    reveals.forEach(reveal => {
-        const windowHeight = window.innerHeight;
-        const revealTop = reveal.getBoundingClientRect().top;
-        if (revealTop < windowHeight - 150) {
-            reveal.style.opacity = "1";
-            reveal.style.transform = "translateY(0)";
-        }
-    });
-}
-
-window.addEventListener('scroll', reveal);

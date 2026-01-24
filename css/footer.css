@@ -1,0 +1,37 @@
+/* 8. FOOTER */
+.footer-section {
+    padding: 100px 5vw 50px;
+    background: #050505;
+    text-align: center;
+}
+
+.social-big {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 50px;
+}
+
+.social-big a {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 10vw, 5rem);
+    color: #222;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 800;
+    transition: 0.4s;
+    line-height: 1;
+}
+
+.social-big a:hover {
+    color: #fff;
+    letter-spacing: 5px;
+    text-shadow: 0 0 20px var(--accent-color);
+}
+
+/* Responsividade do Footer */
+@media (max-width: 768px) {
+    .social-big a { 
+        font-size: 12vw; 
+    }
+}
