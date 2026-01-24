@@ -4,6 +4,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const body = document.body;
     const icon = menuToggle.querySelector('i');
 
+    // --- LÓGICA DE ZOOM NA HERO (MOBILE) ---
+    const heroContainer = document.querySelector('.hero-img-container');
+    
+    if (heroContainer) {
+        heroContainer.addEventListener('click', () => {
+            // Alterna a classe que dá o zoom
+            heroContainer.classList.toggle('hero-active-zoom');
+        });
+    }
+    
     // --- LÓGICA DO MENU MOBILE ---
     const toggleMenu = (isOpen) => {
         navLinks.classList.toggle('active', isOpen);
@@ -46,4 +56,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.addEventListener('scroll', reveal);
     reveal(); // Executa uma vez ao carregar para mostrar o que já está na tela
+
+    
 });
