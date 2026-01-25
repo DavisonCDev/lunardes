@@ -6,10 +6,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- LÓGICA DE ZOOM NA HERO (MOBILE) ---
     const heroContainer = document.querySelector('.hero-img-container');
-    
     if (heroContainer) {
         heroContainer.addEventListener('click', () => {
-            // Alterna a classe que dá o zoom
             heroContainer.classList.toggle('hero-active-zoom');
         });
     }
@@ -17,15 +15,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- LÓGICA DO MENU MOBILE ---
     const toggleMenu = (isOpen) => {
         navLinks.classList.toggle('active', isOpen);
-        menuToggle.classList.toggle('active', isOpen); // Adiciona classe para girar o ícone se quiser
-        
-        // Troca o ícone (Bars / Times)
+        menuToggle.classList.toggle('active', isOpen);
         if (icon) {
             icon.classList.toggle('fa-bars', !isOpen);
             icon.classList.toggle('fa-times', isOpen);
         }
-
-        // Trava/Destrava o scroll
         body.style.overflow = isOpen ? 'hidden' : 'initial';
     };
 
@@ -34,7 +28,6 @@ document.addEventListener('DOMContentLoaded', () => {
         toggleMenu(isOpening);
     });
 
-    // Fechar ao clicar nos links
     document.querySelectorAll('.nav-links a').forEach(link => {
         link.addEventListener('click', () => toggleMenu(false));
     });
@@ -42,20 +35,54 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- LÓGICA DE REVEAL (Scroll) ---
     const reveal = () => {
         const reveals = document.querySelectorAll('section, .album-showcase, .tour-item');
-        
         reveals.forEach(el => {
             const windowHeight = window.innerHeight;
             const revealTop = el.getBoundingClientRect().top;
             const revealPoint = 150;
-
             if (revealTop < windowHeight - revealPoint) {
                 el.classList.add('visible');
             }
         });
     };
-
     window.addEventListener('scroll', reveal);
-    reveal(); // Executa uma vez ao carregar para mostrar o que já está na tela
+    reveal();
 
-    
+    // --- LÓGICA DO CURSOR PERSONALIZADO ---
+    const cursor = document.querySelector('.custom-cursor');
+    if (cursor && window.matchMedia("(hover: hover)").matches) {
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        });
+        const hoverElements = document.querySelectorAll('a, button, .tour-item, input');
+        hoverElements.forEach(el => {
+            el.addEventListener('mouseenter', () => cursor.classList.add('hovered'));
+            el.addEventListener('mouseleave', () => cursor.classList.remove('hovered'));
+        });
+    }
+
+    // --- LÓGICA DO VÍDEO (Tocar 1x com som -> Loop mudo) ---
+    const video = document.getElementById('video-lancamento');
+    if (video) {
+        video.volume = 1.0; 
+        video.loop = false; // Começa sem loop
+
+        const playPromise = video.play();
+
+        if (playPromise !== undefined) {
+            playPromise.catch(error => {
+                // Se o navegador bloquear o som, inicia mudo
+                console.log("Autoplay com som bloqueado. Iniciando mudo.");
+                video.muted = true;
+                video.play();
+            });
+        }
+
+        // Quando terminar a primeira vez...
+        video.addEventListener('ended', () => {
+            video.muted = true; // Fica mudo
+            video.loop = true;  // Ativa o loop
+            video.play();       // Toca de novo
+        });
+    }
 });

@@ -1,0 +1,75 @@
+.newsletter-section {
+    background-color: var(--accent-color);
+    color: #fff;
+    padding: 80px 5vw;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Efeito rasgado no topo */
+.newsletter-section::before {
+    content: '';
+    position: absolute;
+    top: -10px; left: 0; width: 100%; height: 20px;
+    background: #000;
+    clip-path: polygon(0 0, 5% 100%, 10% 0, 15% 100%, 20% 0, 25% 100%, 30% 0, 35% 100%, 40% 0, 45% 100%, 50% 0, 55% 100%, 60% 0, 65% 100%, 70% 0, 75% 100%, 80% 0, 85% 100%, 90% 0, 95% 100%, 100% 0);
+}
+
+.newsletter-title {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    color: #000; 
+}
+
+.newsletter-section p {
+    font-family: var(--font-body);
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+    color: rgba(0,0,0, 0.8);
+}
+
+.newsletter-form {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.newsletter-form input {
+    flex: 1;
+    padding: 15px;
+    background: transparent;
+    border: 2px solid #000;
+    font-family: var(--font-display);
+    color: #000;
+    font-weight: bold;
+    outline: none;
+}
+
+.newsletter-form input::placeholder { color: rgba(0,0,0, 0.5); }
+
+.newsletter-form button {
+    padding: 15px 30px;
+    background: #000;
+    color: var(--accent-color);
+    border: none;
+    font-family: var(--font-display);
+    font-weight: 800;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: transform 0.2s;
+}
+
+.newsletter-form button:hover {
+    transform: scale(1.05);
+    background: #fff;
+    color: #000;
+}
+
+@media (max-width: 768px) {
+    .newsletter-form { flex-direction: column; }
+}

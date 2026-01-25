@@ -1,0 +1,163 @@
+/* =========================================
+   SEÇÃO SOBRE (BIO) - Estilo Colagem
+   ========================================= */
+.about-section {
+    padding: 100px 5vw;
+    background-color: #0e0e0e; /* Um pouco mais claro que o fundo total */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 80px;
+    overflow: hidden;
+}
+
+/* Texto da Bio */
+.about-text {
+    flex: 1;
+    max-width: 500px;
+    z-index: 2;
+}
+
+.about-text h2 {
+    font-family: var(--font-display);
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: var(--accent-color);
+    text-transform: uppercase;
+}
+
+.about-text p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #ccc;
+    margin-bottom: 20px;
+}
+
+/* Efeito de destaque em palavras */
+.highlight {
+    color: #fff;
+    font-weight: bold;
+    background: rgba(112, 0, 255, 0.3); /* Fundo roxo suave */
+    padding: 0 5px;
+}
+
+/* Imagem da Bio (Estilo Polaroid/Colagem) */
+.about-image-container {
+    flex: 1;
+    position: relative;
+    max-width: 500px;
+}
+
+.about-photo {
+    width: 100%;
+    height: auto;
+    filter: grayscale(100%) contrast(110%);
+    transform: rotate(3deg); /* Leve inclinação para parecer colagem */
+    border: 10px solid #fff; /* Borda de foto impressa */
+    box-shadow: 10px 10px 30px rgba(0,0,0,0.5);
+    transition: 0.5s;
+}
+
+.about-image-container:hover .about-photo {
+    transform: rotate(0deg) scale(1.02);
+    filter: grayscale(0%);
+}
+
+/* "Fita Adesiva" decorativa na foto */
+.tape {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 35px;
+    background-color: rgba(255, 255, 255, 0.4);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    z-index: 3;
+    backdrop-filter: blur(2px);
+}
+
+/* =========================================
+   GALERIA VISUAL - Grid Irregular
+   ========================================= */
+.gallery-section {
+    padding: 100px 5vw;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    grid-auto-flow: dense; /* Preenche os buracos vazios */
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    height: 300px; /* Altura padrão */
+    background: #222;
+}
+
+/* Itens largos ou altos para quebrar o padrão (Estilo Indie) */
+.gallery-item.wide { grid-column: span 2; }
+.gallery-item.tall { grid-row: span 2; height: 615px; }
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s, filter 0.5s;
+    filter: grayscale(100%);
+}
+
+/* Efeito Hover na Galeria */
+.gallery-item:hover img {
+    transform: scale(1.1);
+    filter: grayscale(0%);
+}
+
+/* Overlay com créditos/legenda (opcional) */
+.gallery-overlay {
+    position: absolute;
+    bottom: 0; left: 0; width: 100%;
+    padding: 20px;
+    background: linear-gradient(transparent, rgba(0,0,0,0.9));
+    opacity: 0;
+    transition: 0.3s;
+    transform: translateY(20px);
+}
+
+.gallery-item:hover .gallery-overlay {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.gallery-overlay p {
+    font-family: var(--font-display);
+    font-size: 0.9rem;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+/* Responsividade Extras */
+@media (max-width: 768px) {
+    .about-section {
+        flex-direction: column-reverse; /* Foto em cima, texto embaixo no mobile */
+        text-align: center;
+        gap: 40px;
+    }
+
+    .about-image-container {
+        max-width: 100%;
+    }
+    
+    .about-photo {
+        transform: rotate(0deg); /* Remove rotação no mobile pra ganhar espaço */
+    }
+
+    .gallery-item.wide, .gallery-item.tall {
+        grid-column: span 1; /* No mobile, volta tudo a ser 1 coluna */
+        grid-row: span 1;
+        height: 300px;
+    }
+}

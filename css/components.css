@@ -8,14 +8,10 @@
     white-space: nowrap;
     position: relative;
     z-index: 5;
-    
     transform: rotate(-2deg) scale(1.1);
-    
     border-top: 2px solid #fff;
     border-bottom: 2px solid #fff;
     margin-top: -50px;
-
-    /* TRAVA CRUCIAL: Impede vazamento lateral */
     width: 100%;
     max-width: 100%; 
     overflow: hidden; 
@@ -59,34 +55,50 @@
     flex-wrap: wrap;
 }
 
+/* --- VÍDEO QUADRADO COM GLOW AZUL --- */
+
 .cover-art {
     position: relative;
-    width: 300px;
-    height: 300px;
-}
-
-.cover-art img {
     width: 100%;
+    max-width: 400px; 
+    aspect-ratio: 1 / 1; /* Garante ser quadrado */
+    flex-shrink: 0; 
     border-radius: 10px;
-    z-index: 2;
-    position: relative;
 }
 
+.cover-art video {
+    position: absolute; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    border-radius: 10px;
+    z-index: 2; 
+    background: #000; 
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Brilho Azul Pulsante */
 .cover-art .glow {
     position: absolute;
     top: 50%; left: 50%;
     transform: translate(-50%, -50%);
-    width: 100%; height: 100%;
-    background: var(--accent-color);
-    filter: blur(60px);
-    opacity: 0.6;
-    animation: pulse 3s infinite;
+    width: 110%; 
+    height: 110%;
+    
+    /* Azul Neon */
+    background: #0088ff; 
+    
+    filter: blur(70px);
+    z-index: 1; 
+    animation: pulseSlow 6s ease-in-out infinite;
 }
 
-@keyframes pulse {
-    0% { opacity: 0.4; }
-    50% { opacity: 0.8; }
-    100% { opacity: 0.4; }
+@keyframes pulseSlow {
+    0% { opacity: 0.3; scale: 0.95; }
+    50% { opacity: 0.8; scale: 1.05; }
+    100% { opacity: 0.3; scale: 0.95; }
 }
 
 .track-info h3 {
@@ -105,7 +117,6 @@
     flex-wrap: wrap; 
 }
 
-/* Estilo Base para TODOS os botões */
 .btn-plataforma {
     padding: 12px 25px; 
     border-radius: 50px;
@@ -127,7 +138,6 @@
     filter: brightness(1.1);
 }
 
-/* --- Cores das Marcas --- */
 .btn-spotify { background: #1DB954; color: #000; }
 .btn-apple { background: #FA243C; }
 .btn-deezer { background: #A238FF; }
@@ -135,26 +145,18 @@
 .btn-ytmusic { background: #212121; border: 1px solid #FF0000; }
 .btn-youtube { background: #FF0000; }
 
-/* =========================================
-   RESPONSIVIDADE DOS COMPONENTES
-   ========================================= */
 @media (max-width: 768px) {
     .marquee-container { 
         margin-top: -30px; 
-        transform: rotate(-2deg) scale(1.02); /* Escala menor para evitar bugs */
+        transform: rotate(-2deg) scale(1.02); 
     }
-
     .album-showcase { 
         flex-direction: column; 
         text-align: center; 
     }
-    
-    .buttons {
-        justify-content: center; 
+    .cover-art {
+        max-width: 300px;
     }
-    
-    .btn-plataforma {
-        width: 100%; 
-        max-width: 320px; 
-    }
+    .buttons { justify-content: center; }
+    .btn-plataforma { width: 100%; max-width: 320px; }
 }
