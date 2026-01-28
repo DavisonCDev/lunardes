@@ -2,14 +2,15 @@
    LOJA / MERCH (Estilo Drop)
    ========================================= */
 .store-section {
+    /* Define o espaçamento e a cor de fundo quase preta para destacar os produtos */
     padding: 100px 5vw;
-    background-color: #080808; /* Quase preto */
+    background-color: #080808; 
     border-top: 1px solid #222;
 }
 
 .store-grid {
+    /* Ativa o grid e cria colunas automáticas de no mínimo 280px que preenchem o espaço disponível */
     display: grid;
-    /* Cria colunas responsivas automaticamente */
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 40px;
     margin-top: 50px;
@@ -20,19 +21,22 @@
     background: transparent;
     transition: transform 0.3s ease;
     position: relative;
-    group: hover; /* Para facilitar efeitos */
 }
 
 .product-card:hover {
+    /* Aplica um leve deslocamento para cima ao passar o mouse */
     transform: translateY(-10px);
 }
 
 /* Container da Imagem */
 .product-image {
     width: 100%;
-    aspect-ratio: 4/5; /* Formato retrato (típico de moda) */
+    /* Força a imagem a manter a proporção de 4:5 (formato retrato), ideal para vestuário */
+    aspect-ratio: 4/5; 
     background: #151515;
     border-radius: 8px;
+    
+    /* Esconde o zoom da imagem que ultrapassa os limites do card */
     overflow: hidden;
     position: relative;
     margin-bottom: 20px;
@@ -42,12 +46,16 @@
 .product-image img {
     width: 100%;
     height: 100%;
+    
+    /* Garante que a imagem preencha o espaço sem ser esticada, mantendo o centro visível */
     object-fit: cover;
     transition: transform 0.5s ease;
-    filter: grayscale(20%); /* Levemente desaturado */
+    
+    /* Aplica um filtro de desaturação leve para um visual mais sóbrio */
+    filter: grayscale(20%);
 }
 
-/* Efeito ao passar o mouse: Zoom e Cor */
+/* Interação com o Card: Ativa zoom e remove o filtro P&B da imagem */
 .product-card:hover .product-image img {
     transform: scale(1.1);
     filter: grayscale(0%);
@@ -55,6 +63,7 @@
 
 /* --- ETIQUETAS (Badges) --- */
 .badge {
+    /* Posiciona a etiqueta sobre a imagem do produto no canto superior esquerdo */
     position: absolute;
     top: 15px;
     left: 15px;
@@ -68,12 +77,14 @@
 }
 
 .badge.new {
-    background-color: var(--accent-color); /* Roxo/Azul do tema */
+    /* Aplica a cor de destaque e um efeito de brilho externo (glow) */
+    background-color: var(--accent-color);
     color: #fff;
     box-shadow: 0 0 10px var(--accent-color);
 }
 
 .badge.sold-out {
+    /* Estilo neutro e apagado para produtos sem estoque */
     background-color: #333;
     color: #888;
     border: 1px solid #555;
@@ -92,6 +103,7 @@
 }
 
 .product-type {
+    /* Estiliza a categoria do produto (ex: Vestuário) com letras espaçadas */
     font-size: 0.8rem;
     color: #666;
     text-transform: uppercase;
@@ -101,6 +113,7 @@
 }
 
 .price-row {
+    /* Alinha o preço e o botão de compra em extremidades opostas */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -128,18 +141,21 @@
 }
 
 .btn-buy:hover {
+    /* Inverte as cores para indicar interatividade ao passar o mouse */
     background: #fff;
     color: #000;
 }
 
-/* Variação para produto Esgotado */
+/* Variação visual para produto Esgotado */
 .product-card.esgotado .product-image img {
+    /* Reduz drasticamente a visibilidade da imagem do produto */
     opacity: 0.4;
 }
 
 .product-card.esgotado .btn-buy {
+    /* Altera cores e desativa cliques e interações do mouse no botão */
     border-color: #444;
     color: #444;
-    pointer-events: none; /* Não clicável */
+    pointer-events: none; 
     cursor: not-allowed;
 }

@@ -13,6 +13,7 @@
     <meta property="twitter:card" content="summary_large_image">
 
     <link rel="shortcut icon" href="imagens/favicon.ico" type="image/x-icon">
+
     <link rel="stylesheet" href="css/extras.css">
     <link rel="stylesheet" href="css/variables.css">
     <link rel="stylesheet" href="css/navbar.css">
@@ -20,15 +21,17 @@
     <link rel="stylesheet" href="css/components.css">
     <link rel="stylesheet" href="css/tour.css">
     <link rel="stylesheet" href="css/footer.css">
-    <link rel="stylesheet" href="css/newsletter.css"> <link rel="stylesheet" href="css/cursor.css">     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="css/newsletter.css"> 
+    <link rel="stylesheet" href="css/cursor.css">
+    <link rel="stylesheet" href="css/store.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&family=Syne:wght@700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/store.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <div class="custom-cursor"></div>
-
     <div class="noise-overlay"></div>
 
     <nav>
@@ -70,7 +73,7 @@
 
         <div class="marquee-container">
             <div class="marquee-content">
-                NOVO ÁLBUM "VOE" EM BREVE — EM TODAS AS PLATAFORMAS — NOVO ÁLBUM "VOE" EM BREVE — EM TODAS AS PLATAFORMAS — 
+                NOVO ÁLBUM "VOE" EM BREVE — EM TODAS AS PLATAFORMAS — NOVO ÁLBUM "VOE" EM BREVE — EM TODAS AS PLATAFORMAS — NOVO ÁLBUM "VOE" EM BREVE — EM TODAS AS PLATAFORMAS
             </div>
         </div>
 
@@ -79,7 +82,7 @@
             <div class="album-showcase">
                 
                 <div class="cover-art">
-                    <video id="video-lancamento" autoplay playsinline controls>
+                    <video id="video-lancamento" autoplay playsinline muted loop controls>
                         <source src="videos/releasing.mp4" type="video/mp4">
                         Seu navegador não suporta vídeos.
                     </video>
@@ -90,24 +93,12 @@
                     <h3>Voe</h3>
                     <p>O novo álbum está a caminho. Em breve, em todas as plataformas.</p>
                     <div class="buttons">
-                        <a href="https://open.spotify.com/intl-pt/track/5jbVgAmfME9Vld5MNbG3GS?si=04b52a3a0f254ea4" class="btn-plataforma btn-spotify" target="_blank">
-                            <i class="fab fa-spotify"></i> Spotify
-                        </a>
-                        <a href="https://music.apple.com/cz/artist/lunardes/1509576887?l=cs" class="btn-plataforma btn-apple" target="_blank">
-                            <i class="fab fa-apple"></i> Apple Music
-                        </a>
-                        <a href="https://link.deezer.com/s/32fUjOkxLZUkp83cFbPfW" class="btn-plataforma btn-deezer" target="_blank">
-                            <i class="fab fa-deezer"></i> Deezer
-                        </a>
-                        <a href="https://music.youtube.com/watch?v=_mbJisBBrNc&si=qdFzZvt45Gn4qGNP" class="btn-plataforma btn-ytmusic" target="_blank">
-                            <i class="fas fa-music"></i> YT Music
-                        </a>
-                        <a href="https://music.amazon.com.br/tracks/B0915MGS9Y?marketplaceId=A2Q3Y263D00KWC&musicTerritory=BR&ref=dm_sh_iurVqdCMtvJ1U8gPPA7etAyiJ" class="btn-plataforma btn-amazon" target="_blank">
-                            <i class="fab fa-amazon"></i> Amazon
-                        </a>
-                        <a href="https://www.youtube.com/watch?v=iDz5nMpKovw" class="btn-plataforma btn-youtube" target="_blank">
-                            <i class="fab fa-youtube"></i> Ver Clipe
-                        </a>
+                        <a href="https://open.spotify.com/intl-pt/track/5jbVgAmfME9Vld5MNbG3GS?si=04b52a3a0f254ea4" class="btn-plataforma btn-spotify" target="_blank"><i class="fab fa-spotify"></i> Spotify</a>
+                        <a href="https://music.apple.com/cz/artist/lunardes/1509576887?l=cs" class="btn-plataforma btn-apple" target="_blank"><i class="fab fa-apple"></i> Apple Music</a>
+                        <a href="https://link.deezer.com/s/32fUjOkxLZUkp83cFbPfW" class="btn-plataforma btn-deezer" target="_blank"><i class="fab fa-deezer"></i> Deezer</a>
+                        <a href="https://music.youtube.com/watch?v=_mbJisBBrNc" class="btn-plataforma btn-ytmusic" target="_blank"><i class="fas fa-music"></i> YT Music</a>
+                        <a href="https://music.amazon.com.br/tracks/B0915MGS9Y" class="btn-plataforma btn-amazon" target="_blank"><i class="fab fa-amazon"></i> Amazon</a>
+                        <a href="https://www.youtube.com/watch?v=iDz5nMpKovw" class="btn-plataforma btn-youtube" target="_blank"><i class="fab fa-youtube"></i> Ver Clipe</a>
                     </div>
                 </div>
             </div>
@@ -116,24 +107,18 @@
         <section id="galeria" class="gallery-section">
             <h2 class="outline-title">Galeria</h2>
             <div class="gallery-grid">
-                
                 <div class="gallery-item">
                     <img src="imagens/lunardes-show.jpeg" alt="Show ao vivo"> 
-                    <div class="gallery-overlay">
-                        <p>SÃO PAULO, 2025</p>
-                    </div>
+                    <div class="gallery-overlay"><p>SÃO PAULO, 2025</p></div>
                 </div>
-
                 <div class="gallery-item wide">
                     <img src="imagens/lunardesbastidores.jpeg" alt="Bastidores">
                     <div class="gallery-overlay"><p>BACKSTAGE</p></div>
                 </div>
-
                 <div class="gallery-item tall">
                     <img src="imagens/davisonwesley.jpeg" alt="Ensaio">
                     <div class="gallery-overlay"><p>ENSAIO</p></div>
                 </div>
-
                 <div class="gallery-item">
                     <img src="imagens/davisonbruna.jpeg" alt="Ensaio">
                     <div class="gallery-overlay"><p>ENSAIO</p></div>
@@ -152,17 +137,10 @@
         <section id="sobre" class="about-section">
             <div class="about-text">
                 <h2>Quem somos</h2>
-                <p>
-                    Formada no caos urbano de <span class="highlight">Osasco</span>, a <span class="highlight">Lunardes</span> é uma banda de rock alternativo que está na estrada desde 2015.. 
-                </p>
-                <p>
-                    O que começou como sessões de barulho nos quintais de nossas casas se transformou em uma jornada sonora que explora a dualidade entre a <span class="highlight">euforia</span> e a solidão.
-                </p>
-                <p>
-                    Nosso som é para quem sente tudo, o tempo todo.
-                </p>
+                <p>Formada no caos urbano de <span class="highlight">Osasco</span>, a <span class="highlight">Lunardes</span> é uma banda de rock alternativo que está na estrada desde 2015.</p>
+                <p>O que começou como sessões de barulho nos quintais de nossas casas se transformou em uma jornada sonora que explora a dualidade entre a <span class="highlight">euforia</span> e a solidão.</p>
+                <p>Nosso som é para quem sente tudo, o tempo todo.</p>
             </div>
-
             <div class="about-image-container">
                 <div class="tape"></div>
                 <img src="imagens/fotobanda.jpeg" alt="Integrantes da Lunardes" class="about-photo">
@@ -193,112 +171,91 @@
             </ul>
         </section>
 
+        <section id="loja" class="store-section">
+            <h2 class="outline-title">Loja Oficial</h2>
+            <div class="store-grid">
+                <div class="product-card">
+                    <div class="product-image">
+                        <span class="badge new">NOVO DROP</span>
+                        <img src="imagens/camiseta1.jpg" alt="Camiseta É Tudo Mentira">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-type">Vestuário</span>
+                        <h3>T-Shirt "É Tudo Mentira"</h3>
+                        <div class="price-row">
+                            <span class="price">R$ 89,90</span>
+                            <a href="#" class="btn-buy">Comprar</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="imagens/vinil.jpg" alt="Vinil Lunardes">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-type">Música</span>
+                        <h3>Vinil Deluxe LP</h3>
+                        <div class="price-row">
+                            <span class="price">R$ 150,00</span>
+                            <a href="#" class="btn-buy">Comprar</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card esgotado">
+                    <div class="product-image">
+                        <span class="badge sold-out">ESGOTADO</span>
+                        <img src="imagens/ecobag.jpg" alt="Ecobag">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-type">Acessórios</span>
+                        <h3>Ecobag Logo</h3>
+                        <div class="price-row">
+                            <span class="price">R$ 40,00</span>
+                            <span class="btn-buy">Sem Estoque</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="imagens/stickpack.jpg" alt="Pack de Adesivos">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-type">Diversos</span>
+                        <h3>Sticker Pack</h3>
+                        <div class="price-row"><span class="price">R$ 15,90</span><a href="#" class="btn-buy">Comprar</a></div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image"><img src="imagens/caneca.jpg" alt="Caneca"></div>
+                    <div class="product-info">
+                        <span class="product-type">Acessórios</span>
+                        <h3>Caneca</h3>
+                        <div class="price-row"><span class="price">R$ 30,00</span><a href="#" class="btn-buy">Comprar</a></div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image"><img src="imagens/kitlunardes.jpg" alt="Kit Lunardes"></div>
+                    <div class="product-info">
+                        <span class="product-type">Diversos</span>
+                        <h3>Kit Completo</h3>
+                        <div class="price-row"><span class="price">R$ 299,00</span><a href="#" class="btn-buy">Comprar</a></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="newsletter" class="newsletter-section">
+            <div class="newsletter-container">
+                <h2 class="newsletter-title">JUNTE-SE AO CLUBE</h2>
+                <p>Receba lançamentos, datas secretas e merch drops antes de todo mundo.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="SEU E-MAIL AQUI" required>
+                    <button type="submit">INSCREVER</button>
+                </form>
+            </div>
+        </section>
+
     </main>
-
-    <section id="loja" class="store-section">
-        <h2 class="outline-title">Loja Oficial</h2>
-        
-        <div class="store-grid">
-            
-            <div class="product-card">
-                <div class="product-image">
-                    <span class="badge new">NOVO DROP</span>
-                    <img src="imagens/camiseta1.jpg" alt="Camiseta É Tudo Mentira">
-                </div>
-                <div class="product-info">
-                    <span class="product-type">Vestuário</span>
-                    <h3>T-Shirt "É Tudo Mentira"</h3>
-                    <div class="price-row">
-                        <span class="price">R$ 89,90</span>
-                        <a href="#" class="btn-buy">Comprar</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="product-card">
-                <div class="product-image">
-                    <img src="imagens/vinil.jpg" alt="Vinil Lunardes">
-                </div>
-                <div class="product-info">
-                    <span class="product-type">Música</span>
-                    <h3>Vinil Deluxe LP</h3>
-                    <div class="price-row">
-                        <span class="price">R$ 150,00</span>
-                        <a href="#" class="btn-buy">Comprar</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="product-card esgotado">
-                <div class="product-image">
-                    <span class="badge sold-out">ESGOTADO</span>
-                    <img src="imagens/ecobag.jpg" alt="Ecobag">
-                </div>
-                <div class="product-info">
-                    <span class="product-type">Acessórios</span>
-                    <h3>Ecobag Logo</h3>
-                    <div class="price-row">
-                        <span class="price">R$ 40,00</span>
-                        <span class="btn-buy">Sem Estoque</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="product-card">
-                <div class="product-image">
-                    <img src="imagens/stickpack.jpg" alt="Pack de Adesivos">
-                </div>
-                <div class="product-info">
-                    <span class="product-type">Diversos</span>
-                    <h3>Sticker Pack</h3>
-                    <div class="price-row">
-                        <span class="price">R$ 15,90</span>
-                        <a href="#" class="btn-buy">Comprar</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="product-card">
-                <div class="product-image">
-                    <img src="imagens/caneca.jpg" alt="Caneca">
-                </div>
-                <div class="product-info">
-                    <span class="product-type">Acessórios</span>
-                    <h3>Caneca</h3>
-                    <div class="price-row">
-                        <span class="price">R$ 30,00</span>
-                        <a href="#" class="btn-buy">Comprar</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="product-card">
-                <div class="product-image">
-                    <img src="imagens/kitlunardes.jpg" alt="Kit Lunardes">
-                </div>
-                <div class="product-info">
-                    <span class="product-type">Diversos</span>
-                    <h3>Kit Completo</h3>
-                    <div class="price-row">
-                        <span class="price">R$ 299,00</span>
-                        <a href="#" class="btn-buy">Comprar</a>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <section id="newsletter" class="newsletter-section">
-        <div class="newsletter-container">
-            <h2 class="newsletter-title">JUNTE-SE AO CLUBE</h2>
-            <p>Receba lançamentos, datas secretas e merch drops antes de todo mundo.</p>
-            <form class="newsletter-form">
-                <input type="email" placeholder="SEU E-MAIL AQUI" required>
-                <button type="submit">INSCREVER</button>
-            </form>
-        </div>
-    </section>
 
     <section id="contato" class="footer-section">
         <div class="social-big">
@@ -310,7 +267,7 @@
             <div class="footer-links" style="margin-bottom: 20px;">
                 <a href="#" class="press-link" style="color:#666; text-decoration:none; border:1px solid #333; padding:5px 10px;">PRESS KIT / EPK</a>
             </div>
-            <p>© 2026 LUNARDES. FEITO EM OZ.</p>
+            <p>© 2026 LUNARDES. FEITO EM OZ (OSASCO).</p>
         </footer>
     </section>
 
